@@ -4,20 +4,32 @@ import java.awt.AWTException;
 
 public class Setup{
     public static void setup() throws FileNotFoundException{
-        File prompt = Tools.createTxtFile("promptListFile");
-        File group = Tools.createTxtFile("roster");
+        final String documents = Setup.platformDrive()+"/Users/"+System.getProperty("user.name")+"/Documents";
+        File file = new File(documents+"/JavaTeachingUtility");
+        if(file.mkdir()){
+            System.out.println("Success");
+        }
+        File prompt = Tool.createTxtFile(documents+"/JavaTeachingUtility/promptListFile");
+        File group = Tool.createTxtFile(documents+"/JavaTeachingUtility/roster");
         try{
-            Tools.openFile(prompt);
+            Tool.openFile(prompt);
             try{
                 Thread.sleep(1500);
             }
             catch(InterruptedException e){
                 ;
             }
-            Tools.openFile(group);
+            Tool.openFile(group);
         }
         catch(AWTException e){
             ;
         }
+    }
+    public static String platformDrive(){
+        final String sys = System.getProperty("os.name");
+        if(sys.contains("Windows")){
+            return "C:";
+        }
+        return "";
     }
 }
