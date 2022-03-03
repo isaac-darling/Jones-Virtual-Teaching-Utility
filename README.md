@@ -4,5 +4,5 @@ It is a GUI based program to help teachers complete menial virtual learning task
 
 ## Notes:
 
-(Circa September 2020)  
+(We wrote this circa September 2020)  
 This was the first program I wrote in Java, and I worked on it with a good friend of mine who was also a novice at the time. We had just started AP Computer Science A as seniors in high school, and decided to get a little ahead.
